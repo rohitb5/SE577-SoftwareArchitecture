@@ -34,6 +34,7 @@
         <div id="nav">
           <router-link to="/">Home</router-link> |
           <router-link to="/about">About</router-link> |
+          <router-link to="/about2">About2</router-link> |
           <router-link to="/layout">Layout</router-link> |
           <router-link to="/dynamic">Dynamic</router-link> |
           <router-link to="/props">Props</router-link> |
