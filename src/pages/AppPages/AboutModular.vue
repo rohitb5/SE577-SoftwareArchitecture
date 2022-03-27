@@ -17,7 +17,7 @@ import PublicationsSection from 'components/About/PublicationsSection.vue';
 import PhotosSection from 'components/About/PhotosSection.vue';
 
 export default defineComponent({
-  name: 'AboutModular',
+  name: 'AboutModularPage',
   components: {
     AboutSection,
     BackgroundSection,

@@ -11,6 +11,14 @@ const routes: RouteRecordRaw[] = [
         path: '/about2',
         component: () => import('pages/AppPages/AboutModular.vue'),
       },
+      {
+        path: '/dynamic',
+        component: () => import('pages/AppPages/Dynamic.vue'),
+      },
+      {
+        path: '/props',
+        component: () => import('pages/AppPages/PropsPage.vue'),
+      },
     ],
   },
 
