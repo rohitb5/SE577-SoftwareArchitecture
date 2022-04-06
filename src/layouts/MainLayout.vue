@@ -56,46 +56,34 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
-    title: 'Docs',
+    title: 'Quasar Docs',
     caption: 'quasar.dev',
-    icon: 'school',
+    icon: 'web',
     link: 'https://quasar.dev',
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
+    title: 'Course Github',
+    caption: 'github.com/ArchitectingSoftware',
     icon: 'code',
-    link: 'https://github.com/quasarframework',
+    link: 'https://github.com/ArchitectingSoftware/SE577-SoftwareArchitecture',
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
+    title: 'Course Chat Channel',
+    caption: 'slack',
     icon: 'chat',
-    link: 'https://chat.quasar.dev',
+    link: 'https://drexel-se577-2022.slack.com/',
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
+    title: 'Course Materials',
+    caption: 'Blackboard',
+    icon: 'school',
+    link: 'https://learn.dcollege.net/',
   },
   {
     title: 'Twitter',
-    caption: '@quasarframework',
+    caption: '@ArchitectingSoftware',
     icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
+    link: 'https://twitter.com/DrBrianMitchell',
   },
 ];
 
