@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <img alt="Drexel CCI" src="../../assets/drexel-cci.png" />
+    <p>SE 577 SPA Project using Vue.JS</p>
     <p>To build and run this app make sure you have the following installed:</p>
     <ul>
       <li>
@@ -109,8 +110,9 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h4 {
+h4, h5 {
   margin: 48px 0 0;
+  color: gold;
 }
 ul {
   list-style-type: none;
@@ -120,7 +122,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+a, p {
   color: #42b983;
 }
 </style>

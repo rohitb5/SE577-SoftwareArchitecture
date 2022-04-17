@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
       { path: '', component: () => import('pages/AppPages/Home.vue') },
       { path: '/about', component: () => import('pages/AppPages/About.vue') },
       {
-        path: '/about2',
+        path: '/aboutme',
         component: () => import('pages/AppPages/AboutModular.vue'),
       },
       {
@@ -18,6 +18,14 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/props',
         component: () => import('pages/AppPages/PropsPage.vue'),
+      },
+      {
+        path: '/github_api',
+        component: () => import('pages/AppPages/GithubApi.vue'),
+      },
+      {
+        path: '/github_info',
+        component: () => import('pages/AppPages/GithubInfo.vue'),
       },
     ],
   },

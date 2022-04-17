@@ -11,9 +11,9 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> SE577 Demonstration App </q-toolbar-title>
+        <q-toolbar-title> SE577 Project: Single Page Application with Vue.JS interacting with GitHub</q-toolbar-title>
 
-        <div>v 0.1</div>
+        <div>v 1.1</div>
       </q-toolbar>
     </q-header>
 
@@ -32,17 +32,19 @@
     <q-page-container>
       <div id="app">
         <div id="nav">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link> |
-          <router-link to="/about2">About2</router-link> |
-          <router-link to="/layout">Layout</router-link> |
-          <router-link to="/dynamic">Dynamic</router-link> |
-          <router-link to="/props">Props</router-link> |
-          <router-link to="/events">Events</router-link> |
+          <router-link to="/">Home</router-link>  |  
+          <!-- <router-link to="/about">About</router-link> | -->
+          <router-link to="/aboutme">About Me</router-link> |
+          <!-- <router-link to="/layout">Layout</router-link> | -->
+          <!-- <router-link to="/dynamic">Dynamic</router-link> |
+          <router-link to="/props">Props</router-link> | -->
+          <!-- <router-link to="/events">Events</router-link> |
           <router-link to="/webservices">Web Services</router-link> |
           <router-link to="/simple_state">Simple State</router-link> |
           <router-link to="/web_state">Web State</router-link> |
-          <router-link to="/bc_demo">Block Chain Demo</router-link>
+          <router-link to="/bc_demo">Block Chain Demo</router-link> | -->
+          <router-link to="/github_api">GitHub API</router-link> | 
+          <router-link to="/github_info">GitHub Info</router-link>
         </div>
         <router-view />
       </div>
@@ -56,10 +58,10 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
-    title: 'Quasar Docs',
-    caption: 'quasar.dev',
-    icon: 'web',
-    link: 'https://quasar.dev',
+    title: 'My GitHub Repo',
+    caption: 'rohitb5',
+    icon: 'badge',
+    link: 'https://github.com/rohitb5',
   },
   {
     title: 'Course Github',
@@ -68,22 +70,16 @@ const linksList = [
     link: 'https://github.com/ArchitectingSoftware/SE577-SoftwareArchitecture',
   },
   {
-    title: 'Course Chat Channel',
-    caption: 'slack',
-    icon: 'chat',
-    link: 'https://drexel-se577-2022.slack.com/',
+    title: 'GitHub API',
+    caption: 'REST',
+    icon: 'sync',
+    link: 'https://docs.github.com/en/rest/',
   },
   {
-    title: 'Course Materials',
-    caption: 'Blackboard',
+    title: 'Basic HTML Site v1',
+    caption: 'Undergrad Drexel Page',
     icon: 'school',
-    link: 'https://learn.dcollege.net/',
-  },
-  {
-    title: 'Twitter',
-    caption: '@ArchitectingSoftware',
-    icon: 'rss_feed',
-    link: 'https://twitter.com/DrBrianMitchell',
+    link: 'https://www.pages.drexel.edu/~rb689/',
   },
 ];
 
@@ -119,14 +115,28 @@ export default defineComponent({
 
 #nav {
   padding: 30px;
+  font-size: large;
+  font-weight: bold;
 }
 
-#nav a {
+#app a {
   font-weight: bold;
-  color: #2c3e50;
+  font-size: 20px;
+  /* color: #42b983; */
+  color: silver;
+  padding: 5px; 
+
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: goldenrod;
+  pointer-events: none;
+  cursor: default;
 }
+
+#app a:hover {
+  font-weight: bold;
+  color: gold;
+}
+
 </style>

@@ -1,10 +1,11 @@
 <template>
   <div class="q-pa-md">
-    <AboutSection />
-    <BackgroundSection />
+    <AboutSection />  
     <CourseSection />
-    <PublicationsSection />
-    <PhotosSection />
+    <BackgroundSection />
+  
+    <!-- <PublicationsSection />
+    <PhotosSection /> -->
   </div>
 </template>
 
@@ -13,8 +14,8 @@ import { defineComponent } from 'vue';
 import AboutSection from 'components/About/AboutSection.vue';
 import BackgroundSection from 'components/About/BackgroundSection.vue';
 import CourseSection from 'components/About/CourseSection.vue';
-import PublicationsSection from 'components/About/PublicationsSection.vue';
-import PhotosSection from 'components/About/PhotosSection.vue';
+// import PublicationsSection from 'components/About/PublicationsSection.vue';
+// import PhotosSection from 'components/About/PhotosSection.vue';
 
 export default defineComponent({
   name: 'AboutModularPage',
@@ -22,8 +23,8 @@ export default defineComponent({
     AboutSection,
     BackgroundSection,
     CourseSection,
-    PublicationsSection,
-    PhotosSection,
+    // PublicationsSection,
+    // PhotosSection,
   },
 });
 </script>

@@ -8,7 +8,7 @@
         <q-expansion-item
           dark
           expand-separator
-          header-class="bg-teal text-white"
+          header-class="bg-purple text-white"
           label="Binding"
         >
           <q-card>
@@ -18,7 +18,48 @@
             </q-card-section>
           </q-card>
         </q-expansion-item>
+
         <hr />
+        
+        <q-expansion-item
+          expand-separator
+          dark
+          header-class="bg-teal text-white"
+          label="Expand Text"
+          label-lines="2"
+          caption="Click to Expand"
+        >
+          <q-card>
+            <q-card-section>
+              <q-toggle
+                color="teal"
+                v-model="showMeToggle"
+                label="Click Me"
+                left-label
+              />
+              <h5 v-show="showMeToggle">
+                <strong>This is some Hidden Stuff</strong>
+              </h5>
+              <hr />
+              <div>
+                <q-btn
+                  @click="buttonPressToggle = !buttonPressToggle"
+                  :color="buttonPressToggle ? 'teal' : 'white'"
+                  :text-color="!buttonPressToggle ? 'black' : 'white'"
+                  label="Click Me"
+                />
+                <div>
+                  <h5 v-show="buttonPressToggle">
+                    <pre>Showing some hidden stuff</pre>
+                  </h5>
+                </div>
+              </div>
+            </q-card-section>
+          </q-card>
+        </q-expansion-item>
+
+        <hr />
+
         <q-expansion-item
           expand-separator
           dark
