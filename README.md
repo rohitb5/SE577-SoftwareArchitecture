@@ -1,5 +1,5 @@
 # SE577-SoftwareArchitecture
-Project Release 1 branch readme
+# Project Release 1 branch readme
 
 Reference Architecture Diagram can be found in ProjectStub.md within directory. 
 
