@@ -27,6 +27,14 @@ const routes: RouteRecordRaw[] = [
         path: '/github_info',
         component: () => import('pages/AppPages/GithubInfo.vue'),
       },
+      {
+        path: '/simple_state',
+        component: () => import('pages/AppPages/StatePage.vue'),
+      },
+      {
+        path: '/bc_demo',
+        component: () => import('pages/AppPages/BCPage.vue'),
+      },
     ],
   },
 

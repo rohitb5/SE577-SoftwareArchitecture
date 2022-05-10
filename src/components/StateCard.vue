@@ -1,0 +1,77 @@
+<template>
+    <q-card flat bordered class="my-card">
+      <q-card-section>
+        <div class="text-h6">Repo Info</div>
+        <!-- Form Goes Here -->
+        <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+          <q-input v-model="course" label="Course Name" />
+          <q-input v-model="instructor" label="Professor" />
+          <q-input v-model="ghID" label="GitHub ID" />
+          <q-input v-model="ghProxyURL" label="GitHub REST API Endpoint" />
+          <q-input v-model="localTest" label="Local Test Field" />
+          
+          <div class="q-pa-sm q-gutter-sm">
+            <test-input required/>
+            <q-btn label="Load from GitHub" type="submit" color="primary" />
+            <q-btn label="Load from Test" @click="onTest()" color="secondary" />
+            <q-btn
+              label="Reset"
+              type="reset"
+              color="primary"
+              flat
+              class="q-ml-sm"
+            />
+          </div>
+
+          <div v-if="store.repoCount > 0 && display == true">
+            <div><strong>TOTAL REPOs: </strong>  {{ store.repoCount }}</div>
+            <div class="text-left" style="white-space: pre-line;">
+              <ul>
+                <li v-for="(r, idx) in repos" :key="idx">
+                  {{ r }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </q-form>
+      </q-card-section>
+    </q-card>
+  </template>
+  
+  <script lang="ts">
+  export default {
+    name: 'StateCardComponent',
+  };
+  </script>
+  
+  <script setup lang="ts">
+  //NOTICE THE SETUP IN THE SCRIPT TAG, MAKES THINGS EASIER
+  import { ref, watch, onMounted } from 'vue';
+  import { storeToRefs } from 'pinia';
+  import { useSE577Store } from 'stores/se577-store';
+  //import axios from 'axios';
+  //setup state managment
+  const store = useSE577Store();
+  const { course, instructor, repos, ghID, ghProxyURL } = storeToRefs(store);
+  let localTest = ref('local test');
+  let display = ref(true);
+  const onReset = () => {
+    localTest.value = 'localTest';
+    display.value = false;
+  };
+  const onSubmit = async () => {
+    store.loadGHRepos();
+    display.value = true;
+  };
+  const onTest = async () => {
+    store.loadTestRepos();
+    display.value = true;
+  };
+  watch([course, instructor], () => {
+    console.log('state changed');
+  });
+  onMounted(() => onReset());
+  </script>
+  
+  <!-- Add "scoped" attribute to limit CSS to this component only -->
+  <style scoped></style>

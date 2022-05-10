@@ -13,7 +13,7 @@
 
         <q-toolbar-title> SE577 Project: Single Page Application with Vue.JS interacting with GitHub</q-toolbar-title>
 
-        <div>v 1.1</div>
+        <div>v 1.2</div>
       </q-toolbar>
     </q-header>
 
@@ -39,10 +39,10 @@
           <!-- <router-link to="/dynamic">Dynamic</router-link> |
           <router-link to="/props">Props</router-link> | -->
           <!-- <router-link to="/events">Events</router-link> |
-          <router-link to="/webservices">Web Services</router-link> |
-          <router-link to="/simple_state">Simple State</router-link> |
-          <router-link to="/web_state">Web State</router-link> |
-          <router-link to="/bc_demo">Block Chain Demo</router-link> | -->
+          <router-link to="/webservices">Web Services</router-link> | -->
+          <!-- <router-link to="/simple_state">Simple State</router-link> | -->
+          <!-- <router-link to="/web_state">Web State</router-link> | -->
+          <!-- <router-link to="/bc_demo">Block Chain Demo</router-link> | -->
           <router-link to="/github_api">GitHub API</router-link> | 
           <router-link to="/github_info">GitHub Info</router-link>
         </div>
@@ -132,6 +132,8 @@ export default defineComponent({
   color: goldenrod;
   pointer-events: none;
   cursor: default;
+  font-weight: bolder;
+  text-decoration: none; 
 }
 
 #app a:hover {
