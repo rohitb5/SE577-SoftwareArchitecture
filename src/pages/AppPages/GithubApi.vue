@@ -60,18 +60,18 @@
 
   // start()
 
-const BindingSetup = () => {
-  return {
-    bindingUserText: ref(''),
-  };
-};
+// const BindingSetup = () => {
+//   return {
+//     bindingUserText: ref(''),
+//   };
+// };
 
-const ShowHideSetup = () => {
-  return {
-    showMeToggle: ref(false),
-    buttonPressToggle: ref(false),
-  };
-};
+// const ShowHideSetup = () => {
+//   return {
+//     showMeToggle: ref(false),
+//     buttonPressToggle: ref(false),
+//   };
+// };
 
 // export default defineComponent({
 //     name: 'GithubApi',

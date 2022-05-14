@@ -48,10 +48,16 @@ export const useSE577Store = defineStore('SE577Store', {
         console.log('Number of rows returned ', repoList.length);
 
         for (const repo of repoList) {
-            if(repo.description == null){
-                this.repos.push("Name: "+repo.full_name+"\n"+"URL: " + repo.html_url+"\n\n");
-            } else
-                this.repos.push("Name: "+repo.full_name+"\n"+"Description: "+repo.description +  "\nURL: " + repo.html_url+"\n\n");
+          if(repo.language == null && repo.description == null){
+              this.repos.push('Name: '+repo.full_name+'\n'+'URL: ' + repo.html_url+'\n\n');
+          }   
+          else if(repo.description == null){
+              this.repos.push('Name: '+repo.full_name+'\n'+'Language: ' + repo.language+'\n'+'URL: ' + repo.html_url+'\n\n');
+            } 
+          else if(repo.language == null){
+              this.repos.push('Name: '+repo.full_name+'\n'+'Description: '+repo.description +'\n'+'URL: ' + repo.html_url+'\n\n');
+          } else
+              this.repos.push('Name: '+repo.full_name+'\n'+'Language: ' + repo.language+'\n'+'Description: '+repo.description +  '\nURL: ' + repo.html_url+'\n\n');
         }
       }
     },
