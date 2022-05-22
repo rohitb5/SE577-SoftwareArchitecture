@@ -2,7 +2,7 @@
 -** I was unable to configure docker to run the Vue application via Dockerfile. **
 
 Previous setup instructions:
-        - Pull code from proj-release-2 branch (https://github.com/rohitb5/SE577-SoftwareArchitecture/tree/proj-release-3) and install dependencies via 'npm install' or 'yarn install'
+        - Pull code from proj-release-2 branch (https://github.com/rohitb5/SE577-SoftwareArchitecture/tree/proj-Release-3) and install dependencies via 'npm install' or 'yarn install'
         - Run 'quasar dev' from terminal of project directory
         - Afterwards a web browser should come up, navigate to 'Github API' option on the top section of the page right below the nav bar http://localhost:8080/github_api
         - Select 'LOAD FROM TEST' option and the form should update with data from the datastore (3 sample repos)
