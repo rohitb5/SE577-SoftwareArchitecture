@@ -1,5 +1,6 @@
 ## Unable to setup Docker
 -** I was unable to configure docker to run the Vue application via Dockerfile. **
+
 Previous setup instructions:
         - Pull code from proj-release-2 branch (https://github.com/rohitb5/SE577-SoftwareArchitecture/tree/proj-release-2) and install dependencies via 'npm install' or 'yarn install'
         - Run 'quasar dev' from terminal of project directory
