@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ## Unable to setup Docker
 -** I was unable to configure docker to run the Vue application via Dockerfile. **
 
@@ -9,6 +10,21 @@ Previous setup instructions:
         - Select 'RESET'
         - Select 'LOAD FROM GITHUB' option, this will display 30 repos from the GitHub account that is currently entered 'ArchitectingSoftware'
         - Update the 'GitHub ID' field on the form to another GitHub account or enter in 'rohitb5' as another test and then select 'LOAD FROM GITHUB'
+=======
+## How to run Application via Docker
+- Pull code from proj-release-3 branch (https://github.com/rohitb5/SE577-SoftwareArchitecture/tree/proj-Release-3) 
+- Go to project directory via command prompt/terminal and install dependencies via 'npm install' or 'yarn install'.
+- Then run 'make build-server'
+- Then run 'make docker-server'
+- Then run 'make docker-run'
+- Afterwards you can go to a web browser and navigate to: 
+    http://localhost:9080 
+- 'Github API' option on the top section of the page right below the nav bar http://localhost:9080/github_api
+- Select 'LOAD FROM TEST' option and the form should update with data from the datastore (3 sample repos)
+- Select 'RESET'
+- Select 'LOAD FROM GITHUB' option, this will display 30 repos from the GitHub account that is currently entered 'ArchitectingSoftware'
+- Update the 'GitHub ID' field on the form to another GitHub account or enter in 'rohitb5' as another test and then select 'LOAD FROM GITHUB'
+>>>>>>> Stashed changes
 
 # Updated Architecture Model 
 ![Screenshot](RefArchDiagram.png "Architecture Model")
