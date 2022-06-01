@@ -178,7 +178,7 @@ export const useSE577Store = defineStore('SE577Store', {
          const result2 = await axios.get(proxyURL, {
            headers: {
          //   Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`
-            Authorization: "token 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"
+              Authorization: GITHUB_ACCESS_TOKEN
            }
          });
          
