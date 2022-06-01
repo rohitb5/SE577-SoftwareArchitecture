@@ -4,11 +4,10 @@
         <div class="text-h6">Repo Info</div>
         <!-- Form Goes Here -->
         <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-          <q-input v-model="course" label="Course Name" />
-          <q-input v-model="instructor" label="Professor" />
+          <q-input v-model="course" label="Course Name" :readonly="true"/>
+          <q-input v-model="instructor" label="Professor" :readonly="true"/>
           <q-input v-model="ghID" label="GitHub ID" />
           <q-input v-model="ghProxyURL" label="GitHub REST API Endpoint" />
-          <q-input v-model="localTest" label="Local Test Field" />
           
           <div class="q-pa-sm q-gutter-sm">
             <test-input required/>
@@ -33,9 +32,36 @@
               </ul>
             </div>
           </div>
+
+        </q-form>
+      </q-card-section>
+          <hr>
+          <q-card-section>
+        <div class="text-h6">User Properties for rohitb5</div>
+       
+        Select type of call to GitHub below to see what gets returned.
+        <br>
+        <br>
+        <!-- Form Goes Here -->
+        <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+          <q-btn label="Authenticated" @click="githubAuth()" color="primary" />
+          <q-btn label="Unauthenticated" @click="githubNoAuth()" color="secondary" />
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm"/>
+          
+          <div v-if="store.userPropCount > 0 && display == true">
+            <div><strong>User Properties from rohitb5: </strong>  {{ store.userPropCount }}</div>
+            <div class="text-left" style="white-space: pre-line;">
+              <ul>
+                <li v-for="(r, idx) in githubUserInfo" :key="idx">
+                  {{ r }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </q-form>
       </q-card-section>
     </q-card>
+
   </template>
   
   <script lang="ts">
@@ -52,7 +78,7 @@
   //import axios from 'axios';
   //setup state managment
   const store = useSE577Store();
-  const { course, instructor, repos, ghID, ghProxyURL } = storeToRefs(store);
+  const { course, instructor, repos, githubUserInfo, ghID, ghProxyURL } = storeToRefs(store);
   let localTest = ref('local test');
   let display = ref(true);
   const onReset = () => {
@@ -65,6 +91,14 @@
   };
   const onTest = async () => {
     store.loadTestRepos();
+    display.value = true;
+  };
+  const githubAuth = async () => {
+    store.githubAuthStore();
+    display.value = true;
+  };
+  const githubNoAuth = async () => {
+    store.githubNoAuth();
     display.value = true;
   };
   watch([course, instructor], () => {

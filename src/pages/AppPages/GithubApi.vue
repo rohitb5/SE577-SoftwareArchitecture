@@ -16,7 +16,7 @@
 
     <div class="q-pa-md">
       <q-banner class="bg-secondary text-white">
-        <h6>GitHub Repo Demo</h6>
+        <h6>GitHub API Demo</h6>
       </q-banner>
       
       <div class="row">

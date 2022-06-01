@@ -13,7 +13,7 @@
 
         <q-toolbar-title> SE577 Project: Single Page Application with Vue.JS interacting with GitHub</q-toolbar-title>
 
-        <div>v 1.2</div>
+        <div>v 1.4</div>
       </q-toolbar>
     </q-header>
 
