@@ -45,12 +45,15 @@
 - "GitHub Info" page hosts the Gist widget and info
 
 ## Architecture Description
-- Security and Authorization: limited the scope of the access token within the Application to Read-Only and set expiry date. The Application will work without the token as well, only 1 feature will not fully load without the correct token.
+- Security and Authorization: limited the scope of the access token within the Application to Read-Only operations and set expiry date. The Application will work without the token as well, only 1 feature will not fully load without the correct token.
 - Modularity, created Modular components and are also decoupled.
 - Deployability via Dockerfile. 
 - Adaptability, interactive SPA that displays only relevant details to the user after they directly interact with the web app.
 - Interoperability, system talks and works with GitHub REST API.
 - Functionality, easy to use web app with options that meet GitHub requirements. 
+- Attractiveness, using Quasar styling.
+- Overall, separated pages and had multiple different components on each one and a Main layout template that spans across the site. Made the decision to take care of all GitHub API operations within the DataStore that is connected to related Components such as StateCard and UserPropertiesComponent that then displays on the related pages.
+
 
 ## Architecture Model
 ![Screenshot](RefArchDiagram.png "Architecture Model")
