@@ -11,6 +11,8 @@ export type SE577State = {
   githubUserInfo: string[];
   ghID: string;
   ghProxyURL: string;
+  githubUserProp: string;
+  githubUserPropInfo: string[];
 };
 
 export const useSE577Store = defineStore('SE577Store', {
@@ -23,6 +25,8 @@ export const useSE577Store = defineStore('SE577Store', {
       githubUserInfo: [],
       ghID: 'ArchitectingSoftware',
       ghProxyURL: 'https://api.github.com',
+      githubUserProp: '',
+      githubUserPropInfo: [],
     //  ghProxyURL: 'http://localhost:4080/gh',
     } as SE577State),
   getters: {
@@ -35,6 +39,9 @@ export const useSE577Store = defineStore('SE577Store', {
     repoCount: (state) => state.repos.length,
     gistCount: (state) => state.gist.length,
     userPropCount: (state) => state.githubUserInfo.length,
+    userID: (state) => state.githubUserProp,
+    userPropInfo: (state) => state.githubUserProp.length,
+    userPropInfoCount: (state) => state.githubUserPropInfo.length,
   },
   
   actions: {
@@ -130,8 +137,7 @@ export const useSE577Store = defineStore('SE577Store', {
          const result = await axios.get(proxyURL, {
            headers: {
          //   Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`
-         
-            Authorization: GITHUB_ACCESS_TOKEN
+              Authorization: GITHUB_ACCESS_TOKEN
            }
          });
   //    } catch(error) {
@@ -246,5 +252,37 @@ export const useSE577Store = defineStore('SE577Store', {
           
       }
   },
+  async returnGithubUserProp(){
+    this.githubUserPropInfo = [];
+    console.log("in returnGithubUserProp async");
+    const proxyURL = `${this.ghProxyURL}/users/${this.githubUserProp}`;
+    console.log('proxy url ', proxyURL);
+    this.githubUserInfo = [];
+
+    this.repos = [];
+
+    const result = await axios.get(proxyURL);
+     
+    
+    if (result.status === 200) {
+      //it worked
+      const userInfo = result.data;
+      console.log('Number of rows returned ',userInfo.length);
+      console.log('userInfo returned ',userInfo);
+
+      console.log('userInfo.url ',userInfo.url);
+
+      let propValue;
+        for(const propName in userInfo) {
+            propValue = userInfo[propName]
+
+            console.log(propName,propValue);
+            this.githubUserPropInfo.push(propName+': '+ propValue+'\n');
+}
+       
+
+        
+    }
+},
 },
 });

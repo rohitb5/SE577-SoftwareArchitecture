@@ -1,32 +1,29 @@
 <template>
     <q-card flat bordered class="my-card">
       <q-card-section>
-        <div class="text-h6">Repo Info</div>
+        <div class="text-h6">User Info</div>
         <!-- Form Goes Here -->
         <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-          <q-input v-model="course" label="Course Name" :readonly="true"/>
-          <q-input v-model="instructor" label="Professor" :readonly="true"/>
-          <q-input v-model="ghID" label="GitHub ID" />
-          <q-input v-model="ghProxyURL" label="GitHub REST API Endpoint" />
+          <q-input v-model="githubUserProp" label="Enter GitHub ID" />
           
           <div class="q-pa-sm q-gutter-sm">
             <test-input required/>
             <q-btn label="Load from GitHub" type="submit" color="primary" />
-            <q-btn label="Load from Test" @click="onTest()" color="secondary" />
+            <!-- <q-btn label="Load from Test" @click="onTest()" color="secondary" /> -->
             <q-btn
               label="Reset"
               type="reset"
               color="primary"
               flat
               class="q-ml-sm"
-            />
+            /> 
           </div>
 
-          <div v-if="store.repoCount > 0 && display == true">
-            <div><strong>TOTAL REPOs: </strong>  {{ store.repoCount }}</div>
+          <div v-if="store.userPropInfoCount > 0 && display == true">
+            <div><strong>GitHub User Properties </strong> </div>
             <div class="text-left" style="white-space: pre-line;">
               <ul>
-                <li v-for="(r, idx) in repos" :key="idx">
+                <li v-for="(r, idx) in githubUserPropInfo" :key="idx">
                   {{ r }}
                 </li>
               </ul>
@@ -35,14 +32,14 @@
 
         </q-form>
       </q-card-section>
-          <!-- <hr>
+          <hr>
           <q-card-section>
         <div class="text-h6">User Properties for rohitb5</div>
        
         Select type of call to GitHub below to see what gets returned.
         <br>
         <br>
-      
+        <!-- Form Goes Here -->
         <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
           <q-btn label="Authenticated" @click="githubAuth()" color="primary" />
           <q-btn label="Unauthenticated" @click="githubNoAuth()" color="secondary" />
@@ -59,14 +56,14 @@
             </div>
           </div>
         </q-form>
-      </q-card-section> -->
+      </q-card-section>
     </q-card>
 
   </template>
   
   <script lang="ts">
   export default {
-    name: 'StateCardComponent',
+    name: 'UserPropertiesComponent',
   };
   </script>
   
@@ -78,7 +75,7 @@
   //import axios from 'axios';
   //setup state managment
   const store = useSE577Store();
-  const { course, instructor, repos, githubUserInfo, ghID, ghProxyURL } = storeToRefs(store);
+  const { course, instructor, repos, githubUserInfo, ghID, ghProxyURL, githubUserProp, githubUserPropInfo } = storeToRefs(store);
   let localTest = ref('local test');
   let display = ref(true);
   const onReset = () => {
@@ -86,7 +83,7 @@
     display.value = false;
   };
   const onSubmit = async () => {
-    store.loadGHRepos();
+    store.returnGithubUserProp();
     display.value = true;
   };
   const onTest = async () => {
